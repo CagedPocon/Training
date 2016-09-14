@@ -1,5 +1,5 @@
 public class Hero {
-    private String name;
+    private final String name;
     public Hero(String name) {this.name = name;}
     public String getName() {return this.name;}
 }

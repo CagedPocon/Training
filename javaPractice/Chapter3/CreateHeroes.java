@@ -1,16 +1,15 @@
+import java.util.List;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-public class CreateHeroes  {
+public final class CreateHeroes  {
     public static void main(String[] args) {
-        Hero hero1 = new Hero("æ–‰è—¤");
-        Hero hero2 = new Hero("éˆ´æœ¨");
-        ArrayList<Hero> heroes = new ArrayList<>();
+        final Hero hero1 = new Hero("Ä“¡");
+        final Hero hero2 = new Hero("—é–Ø");
+        List<Hero> heroes = new ArrayList<>();
         heroes.add(hero1);
         heroes.add(hero2);
-        Iterator<Hero> heroesIt = heroes.iterator();
-        while (heroesIt.hasNext()) {
-            String heroName = heroesIt.next().getName();
+        for (Hero hero: heroes) {
+            String heroName = hero.getName();
             System.out.println(heroName);
         }
     }
