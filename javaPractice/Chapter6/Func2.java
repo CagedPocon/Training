@@ -1,3 +1,3 @@
 public interface Func2 {
-    public abstract String call (boolean a, String b);
+    public abstract String call (boolean b, String s);
 }
