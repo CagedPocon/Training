@@ -13,6 +13,13 @@ public class Launcher {
         String[] args = {};
         mainMethod.invoke(null, (Object)args);
     }
+    private static void launchExternalSub(Class<?> cinfo)
+    throws Exception {
+        Method subMethod = cinfo.getDeclaredMethod("sub", String[].class);
+        String[] args = {};
+        Object subInstance = cinfo.newInstance();
+        subMethod.invoke(subInstance, (Object)args);
+    }
 
     public static void main(String[] args) {
         final String fqcn = args[0];
@@ -26,9 +33,10 @@ public class Launcher {
             }
             if (launchCode.equals("E")) {
                 launchExternal(cinfo);
-            }
-            else if (launchCode.equals("I")) {
+            } else if (launchCode.equals("I")) {
                 launchInternal(cinfo);
+            } else if (launchCode.equals("S")) {
+                launchExternalSub(cinfo);
             } else {
                 throw new Exception("起動コードはEまたはIで指定してください");
             }

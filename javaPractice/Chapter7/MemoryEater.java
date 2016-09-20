@@ -6,4 +6,11 @@ public class MemoryEater {
             longArray[i] = 0;
         }
     }
+    public void sub(String[] args) {
+        System.out.println("Eating");
+        long[] longArray = new long[128000];
+        for (int i = 0; i < longArray.length; i++) {
+            longArray[i] = 0;
+        }
+    }
 }
